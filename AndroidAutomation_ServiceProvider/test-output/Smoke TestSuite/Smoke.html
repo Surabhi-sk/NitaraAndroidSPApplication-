@@ -1,0 +1,575 @@
+<html>
+<head>
+<title>TestNG:  Smoke</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Smoke</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>25/3/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun May 29 16:55:40 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>3376 seconds (3376622 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nitara.CattleManagement.RegisterMilkingorDryCattle.RegisterCattle_MilkingorDryCattle()'><b>RegisterCattle_MilkingorDryCattle</b><br>Test class: com.nitara.CattleManagement.RegisterMilkingorDryCattle<br>Parameters: {cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, isCattleDry=true, calfCount=Twins, pregnantSince=2, currentLactation=1, calf1Gender=Male, testcase=RegisterCattle_MilkingorDryCattle, breed=Gojri, lastCalvingDate=25 Jun 2020, dryPeriodDate=27 Oct 2020, isCrossBreed=false , isCattlePregnant=false, bullId=3450, isCattleInseminated=false, semenBrand=SAG}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: select_cattle_tv}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.RegisterCattle_MilkingCattlePage.assert_CattleType(RegisterCattle_MilkingCattlePage.java:130)
+	at com.nitara.CattleManagement.RegisterMilkingorDryCattle.RegisterCattle_MilkingorDryCattle(RegisterMilkingorDryCattle.java:34)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: select_cattle_tv})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1eb9713 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 38 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: select_cattle_tv})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 40 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace21451764", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace21451764'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: select_cattle_tv}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.RegisterCattle_MilkingCattlePage.assert_CattleType(RegisterCattle_MilkingCattlePage.java:130)
+	at com.nitara.CattleManagement.RegisterMilkingorDryCattle.RegisterCattle_MilkingorDryCattle(RegisterMilkingorDryCattle.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: select_cattle_tv})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1eb9713 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 38 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: select_cattle_tv})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 40 more
+</pre></div></td>
+<td>129</td>
+<td>com.nitara.CattleManagement.RegisterMilkingorDryCattle@28586</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.ViewVaccination.Vaccination_ViewData()'><b>Vaccination_ViewData</b><br>Test class: com.nitara.HealthManagement.ViewVaccination<br>Parameters: {dosage=20, vaccine=HS (Haemorrhagic Septicaemia), amount=51, testcase=Vaccination_ViewData}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: tvCattleDetails}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.SP_BasicCattleProfilePage.select_cattleProfile(SP_BasicCattleProfilePage.java:40)
+	at appCommonClasses.Helper.goTo_CattleProfile(Helper.java:93)
+	at appCommonClasses.Helper.goTo_ViewHealthActivityScreenFromCattleProfile(Helper.java:76)
+	at com.nitara.HealthManagement.ViewVaccination.Vaccination_ViewData(ViewVaccination.java:25)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: tvCattleDetails})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 33 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1845a40 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 40 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: tvCattleDetails})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 42 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace14865734", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace14865734'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: tvCattleDetails}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.SP_BasicCattleProfilePage.select_cattleProfile(SP_BasicCattleProfilePage.java:40)
+	at appCommonClasses.Helper.goTo_CattleProfile(Helper.java:93)
+	at appCommonClasses.Helper.goTo_ViewHealthActivityScreenFromCattleProfile(Helper.java:76)
+	at com.nitara.HealthManagement.ViewVaccination.Vaccination_ViewData(ViewVaccination.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: tvCattleDetails})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 33 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1845a40 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 40 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: tvCattleDetails})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 42 more
+</pre></div></td>
+<td>101</td>
+<td>com.nitara.HealthManagement.ViewVaccination@1a57272</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.AddDeworming.Deworming_AddData()'><b>Deworming_AddData</b><br>Test class: com.nitara.HealthManagement.AddDeworming<br>Parameters: {amount=60, dewormer=Ivermectin, testcase=Deworming_AddData}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: svHealth}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.SP_BasicCattleProfilePage.select_health(SP_BasicCattleProfilePage.java:34)
+	at appCommonClasses.Helper.goTo_AddHealthActivityScreenFromBasicCP(Helper.java:48)
+	at com.nitara.HealthManagement.AddDeworming.Deworming_AddData(AddDeworming.java:26)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: svHealth})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@9b49f (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 39 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: svHealth})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 41 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32350612", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32350612'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: svHealth}) (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.nitara.PageObjects.BasePage.waitVisibility(BasePage.java:81)
+	at com.nitara.PageObjects.SP_BasicCattleProfilePage.select_health(SP_BasicCattleProfilePage.java:34)
+	at appCommonClasses.Helper.goTo_AddHealthActivityScreenFromBasicCP(Helper.java:48)
+	at com.nitara.HealthManagement.AddDeworming.Deworming_AddData(AddDeworming.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: svHealth})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@9b49f (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 39 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: svHealth})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-OB1OE1J&apos;, ip: &apos;192.168.0.121&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_291&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 41 more
+</pre></div></td>
+<td>106</td>
+<td>com.nitara.HealthManagement.AddDeworming@1afc369</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nitara.HealthManagement.FollowUp.FollowUp_AddData()'><b>FollowUp_AddData</b><br>Test class: com.nitara.HealthManagement.FollowUp<br>Parameters: {dosage=10, isAntibioticGiven=true, amount=50, disease=BQ, isFollowUpRequired=true, FUpFollowupAfter=5, FUpRemarks=condition details, symptomsCount=2, FUpIsCured=false, medicine=medicine, dateOfVisit=1 Nov 2021, testcase=FollowUp_AddData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes, FUpIsFollowupRequired=true, FUpDateOfVisit=29 Dec 2021, FUpDosage=10, FUpUnit=ml, FUpIsAntibioticGiven=false, FUpMedicine=med01}</td>
+<td></td>
+<td>179</td>
+<td>com.nitara.HealthManagement.FollowUp@169cf</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.AddDryPeriod.Dry_AddData()'><b>Dry_AddData</b><br>Test class: com.nitara.BreedingManagement.AddDryPeriod</td>
+<td></td>
+<td>78</td>
+<td>com.nitara.BreedingManagement.AddDryPeriod@238e3f</td></tr>
+<tr>
+<td title='com.nitara.CattleManagement.RegisterHeifer.RegisterCattle_Heifer()'><b>RegisterCattle_Heifer</b><br>Test class: com.nitara.CattleManagement.RegisterHeifer<br>Parameters: {cattleType=Cow, inseminationDate=4 Dec 2021, inseminationType=Artificial, crossedWith=HF, pregnantSince=1, testcase=RegisterCattle_Heifer, monthOfBirth=JANUARY, breed=Hariana, isCrossBreed=true, isCattlePregnant=false, bullId=3456, isCattleInseminated=false, semenBrand=SAG, yearOfBirth=2019}</td>
+<td></td>
+<td>72</td>
+<td>com.nitara.CattleManagement.RegisterHeifer@1c43f4e</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.AddPD.PD_AddData()'><b>PD_AddData</b><br>Test class: com.nitara.BreedingManagement.AddPD<br>Parameters: {isCattlePregnant=true, pregnancyTestDate=21 Aug 2021, testcase=PD_AddData}</td>
+<td></td>
+<td>79</td>
+<td>com.nitara.BreedingManagement.AddPD@c7b4de</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.ViewDryPeriod.Dry_ViewData()'><b>Dry_ViewData</b><br>Test class: com.nitara.BreedingManagement.ViewDryPeriod</td>
+<td></td>
+<td>135</td>
+<td>com.nitara.BreedingManagement.ViewDryPeriod@fee8e7</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.ViewDeworming.Deworming_ViewData()'><b>Deworming_ViewData</b><br>Test class: com.nitara.HealthManagement.ViewDeworming<br>Parameters: {amount=20, dewormer=Piperazine, testcase=Deworming_ViewData}</td>
+<td></td>
+<td>151</td>
+<td>com.nitara.HealthManagement.ViewDeworming@181ae3f</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.ViewInsemination.Insemination_AddData()'><b>Insemination_AddData</b><br>Test class: com.nitara.BreedingManagement.ViewInsemination<br>Parameters: {bullId=BullId01, dateOfProduction=4, semenStation=semenStat, inseminationDate=21 Jun 2021, ejaculationNumber=3, dayOfYear=35, geoLocationOfService=Location, breedCode=222, semenBrand=SAG, testcase=Insemination_AddData}</td>
+<td></td>
+<td>148</td>
+<td>com.nitara.BreedingManagement.ViewInsemination@4aea35</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.Treatment.Treatment_AddData()'><b>Treatment_AddData</b><br>Test class: com.nitara.HealthManagement.Treatment<br>Parameters: {dosage=10, isAntibioticGiven=true, amount=50, disease=BQ, isFollowUpRequired=true, symptomsCount=2, medicine=b, dateOfVisit=1 Nov 2021, testcase=Treatment_AddData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes}</td>
+<td></td>
+<td>112</td>
+<td>com.nitara.HealthManagement.Treatment@19d4f69</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.ViewHeat.Heat_ViewData()'><b>Heat_ViewData</b><br>Test class: com.nitara.BreedingManagement.ViewHeat<br>Parameters: {heatType=Natural, testcase=Heat_ViewData}</td>
+<td></td>
+<td>133</td>
+<td>com.nitara.BreedingManagement.ViewHeat@464a14</td></tr>
+<tr>
+<td title='com.nitara.CattleManagement.RegisterCalf.RegisterCattle_Calf()'><b>RegisterCattle_Calf</b><br>Test class: com.nitara.CattleManagement.RegisterCalf<br>Parameters: {isCrossBreed=false , cattleType=Cow, weight=80, testcase=RegisterCattle_Calf, monthOfBirth=APRIL, breed=Rathi, yearOfBirth=2021}</td>
+<td></td>
+<td>79</td>
+<td>com.nitara.CattleManagement.RegisterCalf@10dbf45</td></tr>
+<tr>
+<td title='com.nitara.AccountManagement.Login.Login_ValidData()'><b>Login_ValidData</b><br>Test class: com.nitara.AccountManagement.Login</td>
+<td></td>
+<td>18</td>
+<td>com.nitara.AccountManagement.Login@1baf4f0</td></tr>
+<tr>
+<td title='com.nitara.CattleManagement.RegisterBull.RegisterCattle_Bull()'><b>RegisterCattle_Bull</b><br>Test class: com.nitara.CattleManagement.RegisterBull<br>Parameters: {isCrossBreed=false , cattleType=Buffalo, weight=150, testcase=RegisterCattle_Bull, monthOfBirth=APRIL, breed=Bhadawari, yearOfBirth=2019}</td>
+<td></td>
+<td>78</td>
+<td>com.nitara.CattleManagement.RegisterBull@17776a8</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.AddHeat.Heat_AddData()'><b>Heat_AddData</b><br>Test class: com.nitara.BreedingManagement.AddHeat<br>Parameters: {heatType=Artificial, testcase=Heat_AddData}</td>
+<td></td>
+<td>77</td>
+<td>com.nitara.BreedingManagement.AddHeat@19b62af</td></tr>
+<tr>
+<td title='com.nitara.WeightManagement.AddWeight.Weight_AddData()'><b>Weight_AddData</b><br>Test class: com.nitara.WeightManagement.AddWeight<br>Parameters: {weight=215, calculateBy=Direct Weight, testcase=Weight_AddData, dateOfWeight=21 Jun 2021}</td>
+<td></td>
+<td>70</td>
+<td>com.nitara.WeightManagement.AddWeight@e807c6</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.ViewCalving.Calving_AddData()'><b>Calving_AddData</b><br>Test class: com.nitara.BreedingManagement.ViewCalving<br>Parameters: {calvingTime=9:18 AM, calfGender1=Female, calfGender2=Male, calvingDate=20 Aug 2021, calfResult=Twins, testcase=Calving_AddData}</td>
+<td></td>
+<td>145</td>
+<td>com.nitara.BreedingManagement.ViewCalving@cf48b7</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.ViewFollowUp.FollowUp_ViewData()'><b>FollowUp_ViewData</b><br>Test class: com.nitara.HealthManagement.ViewFollowUp<br>Parameters: {dosage=10, isAntibioticGiven=true, amount=50, disease=BQ, isFollowUpRequired=true, FUpFollowupAfter=5, FUpRemarks=condition details, symptomsCount=2, FUpIsCured=false, medicine=medicine, dateOfVisit=1 Nov 2021, testcase=FollowUp_ViewData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes, FUpIsFollowupRequired=true, FUpDateOfVisit=29 Dec 2021, FUpDosage=10, FUpUnit=ml, FUpIsAntibioticGiven=false, FUpMedicine=med01}</td>
+<td></td>
+<td>236</td>
+<td>com.nitara.HealthManagement.ViewFollowUp@8df31b</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.AddCalving.Calving_AddData()'><b>Calving_AddData</b><br>Test class: com.nitara.BreedingManagement.AddCalving<br>Parameters: {calvingTime=9:18 AM, calfGender1=Female, calfGender2=Male, calvingDate=20 Aug 2021, calfResult=Twins, testcase=Calving_AddData}</td>
+<td></td>
+<td>85</td>
+<td>com.nitara.BreedingManagement.AddCalving@16da883</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.AddInsemination.Insemination_AddData()'><b>Insemination_AddData</b><br>Test class: com.nitara.BreedingManagement.AddInsemination<br>Parameters: {bullId=BullId01, dateOfProduction=4, semenStation=semenStat, inseminationDate=21 Jun 2021, ejaculationNumber=3, dayOfYear=35, geoLocationOfService=Location, breedCode=222, semenBrand=SAG, testcase=Insemination_AddData}</td>
+<td></td>
+<td>90</td>
+<td>com.nitara.BreedingManagement.AddInsemination@dd8682</td></tr>
+<tr>
+<td title='com.nitara.AccountManagement.LoginWithOTP.LoginwithOTP_ValidData()'><b>LoginwithOTP_ValidData</b><br>Test class: com.nitara.AccountManagement.LoginWithOTP</td>
+<td></td>
+<td>24</td>
+<td>com.nitara.AccountManagement.LoginWithOTP@1127a61</td></tr>
+<tr>
+<td title='com.nitara.AccountManagement.RegisterFarm.registerFarm()'><b>registerFarm</b><br>Test class: com.nitara.AccountManagement.RegisterFarm</td>
+<td></td>
+<td>40</td>
+<td>com.nitara.AccountManagement.RegisterFarm@16438c9</td></tr>
+<tr>
+<td title='com.nitara.BreedingManagement.ViewPD.PD_ViewData()'><b>PD_ViewData</b><br>Test class: com.nitara.BreedingManagement.ViewPD<br>Parameters: {isCattlePregnant=true, testcase=PD_ViewData}</td>
+<td></td>
+<td>161</td>
+<td>com.nitara.BreedingManagement.ViewPD@42d7b5</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.AddVaccination.Vaccination_AddData()'><b>Vaccination_AddData</b><br>Test class: com.nitara.HealthManagement.AddVaccination<br>Parameters: {dosage=60, vaccine=HS (Haemorrhagic Septicaemia), amount=50, testcase=Vaccination_AddData}</td>
+<td></td>
+<td>96</td>
+<td>com.nitara.HealthManagement.AddVaccination@117cd4b</td></tr>
+<tr>
+<td title='com.nitara.WeightManagement.ViewWeight.Weight_ViewData()'><b>Weight_ViewData</b><br>Test class: com.nitara.WeightManagement.ViewWeight<br>Parameters: {weight=310, calculateBy=Direct Weight, testcase=Weight_ViewData, dateOfWeight=24 Jun 2021}</td>
+<td></td>
+<td>84</td>
+<td>com.nitara.WeightManagement.ViewWeight@16a4d6c</td></tr>
+<tr>
+<td title='com.nitara.AccountManagement.ForgotPin.ForgotPIN()'><b>ForgotPIN</b><br>Test class: com.nitara.AccountManagement.ForgotPin</td>
+<td></td>
+<td>37</td>
+<td>com.nitara.AccountManagement.ForgotPin@1a10787</td></tr>
+<tr>
+<td title='com.nitara.HealthManagement.ViewTreatment.Treatment_ViewData()'><b>Treatment_ViewData</b><br>Test class: com.nitara.HealthManagement.ViewTreatment<br>Parameters: {dosage=11, isAntibioticGiven=true, amount=50, disease=HS, isFollowUpRequired=true, symptomsCount=3, medicine=med2, dateOfVisit=2 Nov 2021, testcase=Treatment_ViewData, followUpAfter=10, symptoms[1]=Coughing, symptoms[0]=Watery Eyes}</td>
+<td></td>
+<td>176</td>
+<td>com.nitara.HealthManagement.ViewTreatment@1b37288</td></tr>
+</table><p>
+</body>
+</html>

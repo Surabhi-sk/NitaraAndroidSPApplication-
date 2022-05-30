@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Smoke TestSuite]">
+  <test thread-count="5" name="Smoke(failed)">
+    <classes>
+      <class name="com.nitara.HealthManagement.ViewVaccination">
+        <methods>
+          <include name="Vaccination_ViewData" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.HealthManagement.ViewVaccination -->
+      <class name="com.nitara.HealthManagement.AddDeworming">
+        <methods>
+          <include name="quit"/>
+          <include name="Deworming_AddData" invocation-numbers="0"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.HealthManagement.AddDeworming -->
+      <class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle">
+        <methods>
+          <include name="RegisterCattle_MilkingorDryCattle" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.nitara.CattleManagement.RegisterMilkingorDryCattle -->
+    </classes>
+  </test> <!-- Smoke(failed) -->
+</suite> <!-- Failed suite [Smoke TestSuite] -->

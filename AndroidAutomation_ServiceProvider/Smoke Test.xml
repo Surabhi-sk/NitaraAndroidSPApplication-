@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke TestSuite">
+	<test name="Smoke" preserve-order="true">
+		<classes>
+
+<class name="com.nitara.HealthManagement.FollowUp"/>
+<class name="com.nitara.AccountManagement.RegisterFarm"/>
+<class name="com.nitara.HealthManagement.ViewFollowUp"/>	
+<class name="com.nitara.HealthManagement.ViewTreatment"/>
+<class name="com.nitara.HealthManagement.ViewVaccination"/>  
+<class name="com.nitara.HealthManagement.ViewDeworming"/>
+<class name="com.nitara.BreedingManagement.AddDryPeriod"/>	
+<class name="com.nitara.BreedingManagement.ViewHeat"/>
+<class name="com.nitara.BreedingManagement.ViewInsemination"/> 
+<class name="com.nitara.BreedingManagement.ViewPD"/>
+<class name="com.nitara.BreedingManagement.ViewDryPeriod"/>
+<class name="com.nitara.WeightManagement.AddWeight"/>
+<class name="com.nitara.WeightManagement.ViewWeight"/>
+<class name="com.nitara.HealthManagement.AddVaccination"/>
+<class name="com.nitara.BreedingManagement.AddPD"/>
+<class name="com.nitara.BreedingManagement.ViewCalving"/>
+<class name="com.nitara.BreedingManagement.AddHeat"/>
+<class name="com.nitara.BreedingManagement.AddInsemination"/>		
+<class name="com.nitara.BreedingManagement.AddCalving"/>
+<class name="com.nitara.HealthManagement.AddVaccination"/>
+<class name="com.nitara.HealthManagement.AddDeworming"/> 
+<class name="com.nitara.HealthManagement.Treatment"/>
+<class name="com.nitara.CattleManagement.RegisterHeifer"/>
+<class name="com.nitara.CattleManagement.RegisterCalf"/>
+<class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle"/>
+<class name="com.nitara.CattleManagement.RegisterBull"/>
+<class name="com.nitara.AccountManagement.ForgotPin"/>
+<class name="com.nitara.AccountManagement.LoginWithOTP"/>
+<class name="com.nitara.AccountManagement.Login"/>
+		</classes>	
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

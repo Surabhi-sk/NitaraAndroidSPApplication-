@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Failed suite [Smoke TestSuite]" duration-ms="388543" started-at="2022-05-29T17:53:34 IST" finished-at="2022-05-29T18:00:03 IST">
+    <groups>
+    </groups>
+    <test name="Smoke(failed)" duration-ms="388543" started-at="2022-05-29T17:53:34 IST" finished-at="2022-05-29T18:00:03 IST">
+      <class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.nitara.CattleManagement.RegisterMilkingorDryCattle@1d15f18]" name="initialize" is-config="true" duration-ms="14359" started-at="2022-05-29T17:58:15 IST" finished-at="2022-05-29T17:58:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="RegisterCattle_MilkingorDryCattle(java.util.Map)[pri:0, instance:com.nitara.CattleManagement.RegisterMilkingorDryCattle@1d15f18]" name="RegisterCattle_MilkingorDryCattle" duration-ms="93568" started-at="2022-05-29T17:58:29 IST" data-provider="getData" finished-at="2022-05-29T18:00:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{cattleType=Buffalo, inseminationDate=23 Aug 2020, calf2Gender=Female, inseminationType=Artificial, isCattleDry=true, calfCount=Twins, pregnantSince=2, currentLactation=1, calf1Gender=Male, testcase=RegisterCattle_MilkingorDryCattle, breed=Gojri, lastCalvingDate=25 Jun 2020, dryPeriodDate=27 Oct 2020, isCrossBreed=false , isCattlePregnant=false, bullId=3450, isCattleInseminated=false, semenBrand=SAG}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterCattle_MilkingorDryCattle -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.nitara.CattleManagement.RegisterMilkingorDryCattle@1d15f18]" name="quit" is-config="true" duration-ms="481" started-at="2022-05-29T18:00:02 IST" finished-at="2022-05-29T18:00:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.nitara.CattleManagement.RegisterMilkingorDryCattle -->
+      <class name="com.nitara.HealthManagement.AddDeworming">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.nitara.HealthManagement.AddDeworming@1bd940d]" name="initialize" is-config="true" duration-ms="16276" started-at="2022-05-29T17:56:33 IST" finished-at="2022-05-29T17:56:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="Deworming_AddData(java.util.Map)[pri:0, instance:com.nitara.HealthManagement.AddDeworming@1bd940d]" name="Deworming_AddData" duration-ms="84404" started-at="2022-05-29T17:56:50 IST" data-provider="getData" finished-at="2022-05-29T17:58:14 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{amount=60, dewormer=Ivermectin, testcase=Deworming_AddData}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Deworming_AddData -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.nitara.HealthManagement.AddDeworming@1bd940d]" name="quit" is-config="true" duration-ms="471" started-at="2022-05-29T17:58:14 IST" finished-at="2022-05-29T17:58:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.nitara.HealthManagement.AddDeworming -->
+      <class name="com.nitara.HealthManagement.ViewVaccination">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.nitara.HealthManagement.ViewVaccination@9a5fbe]" name="initialize" is-config="true" duration-ms="16516" started-at="2022-05-29T17:53:35 IST" finished-at="2022-05-29T17:53:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="Vaccination_ViewData(java.util.Map)[pri:0, instance:com.nitara.HealthManagement.ViewVaccination@9a5fbe]" name="Vaccination_ViewData" duration-ms="161233" started-at="2022-05-29T17:53:51 IST" data-provider="getData" finished-at="2022-05-29T17:56:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{dosage=20, vaccine=HS (Haemorrhagic Septicaemia), amount=51, testcase=Vaccination_ViewData}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Vaccination_ViewData -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.nitara.HealthManagement.ViewVaccination@9a5fbe]" name="quit" is-config="true" duration-ms="582" started-at="2022-05-29T17:56:33 IST" finished-at="2022-05-29T17:56:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.nitara.HealthManagement.ViewVaccination -->
+    </test> <!-- Smoke(failed) -->
+  </suite> <!-- Failed suite [Smoke TestSuite] -->
+</testng-results>
