@@ -64,9 +64,8 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	@AndroidFindBy(id = "com.nitara.serviceprovider:id/pregnant_since_spinner") 
 	private MobileElement pregnant_since;
 	
-	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\".*inserminationDate.*\"))")   
-	private MobileElement inserminationDate;
+	@AndroidFindBy(id = "inseminationDate")   
+	private MobileElement inseminationDate;
 	
 	@AndroidFindBy(id = "semen_brand_spinner") 
 	private MobileElement semen_brand;
@@ -79,23 +78,22 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 			+ "new UiSelector().resourceIdMatches(\".*bull_id_et.*\"))")   
 	private MobileElement bull_id;
 	
-	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\".*is_Incerminated.*\"))")   
-	private MobileElement is_Incerminated;
+	@AndroidFindBy(id = "is_inseminated")  
+	private MobileElement is_Insemiminated;
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*insemination_date_lbl.*\"))")   
 	private MobileElement insemination_date_lbl;
 	
-	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\".*is_cattle_dry.*\"))")    
+	@AndroidFindBy(id = "is_cattle_dry")
 	private MobileElement is_cattle_dry;
 
 	
 	@AndroidFindBy(id = "dryPeriodDate") 
 	private MobileElement dryPeriodDate;
 	
-	@AndroidFindBy(id = "calf_result_spinner1") 
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*calf_result_spinner1.*\"))")
 	private MobileElement calf_result;
 	
 	
@@ -112,6 +110,13 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	
 	@AndroidFindBy(id = "calving_date")   
 	private MobileElement calvingDate;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().resourceIdMatches(\".*text1.*\"))") 
+	private MobileElement popup;
 	
 	public void click_uploadPhoto() throws IOException {
 		click(uploadphoto);
@@ -168,7 +173,12 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	
 	
 	public void enter_Calvingdate(String date) {
+		waitForVisibility(calf_result);
 		sendKeys(calvingDate,date);
+	}
+	
+	public void press_SuggestionPopup() {
+		click(popup);
 	}
 	
 	public void enter_CalfCount(String count) {
@@ -196,9 +206,9 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	}
 	
 	public void isCattleInseminated() {
-		String checked = is_Incerminated.getAttribute("checked");
+		String checked = is_Insemiminated.getAttribute("checked");
 		if(checked.equals("false")) {
-			is_Incerminated.click();	
+			is_Insemiminated.click();	
 		}
 	}
 	
@@ -226,7 +236,8 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	}
 	
 	public void enter_InseminationDate(String Date) {
-		sendKeys(inserminationDate,Date);
+		waitForVisibility(save_btn);
+		sendKeys(inseminationDate,Date);
 	}
 	
 	public void select_semenBrand(String semen) {
@@ -244,6 +255,7 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 	}
 	
 	public void cattleIsDry() {
+		waitForVisibility(save_btn);
 		String checked = is_cattle_dry.getAttribute("checked");
 		if(checked.equals("false")) {
 			is_cattle_dry.click();	
@@ -254,7 +266,11 @@ public class RegisterCattle_MilkingCattlePage  extends BasePage{
 		sendKeys(dryPeriodDate,Date);
 	}
 	
-	
+	public void assertWarningMsg(String msg) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),msg);
+	} 
+
 	
 
 }
