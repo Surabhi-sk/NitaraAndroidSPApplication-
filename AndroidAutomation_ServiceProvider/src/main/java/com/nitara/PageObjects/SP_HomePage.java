@@ -39,6 +39,9 @@ public class SP_HomePage extends BasePage{
 
 	@AndroidFindBy(id = "home") 
 	private MobileElement home_btn;
+	
+	@AndroidFindBy(id ="settings")
+	private MobileElement settings;
 
 
 
@@ -93,6 +96,10 @@ public class SP_HomePage extends BasePage{
 			}
 	}
 	
+	public void click_SettingsButton()
+	{	waitForVisibility(settings);
+		click(settings);	
+	}
 	
 	
 	
