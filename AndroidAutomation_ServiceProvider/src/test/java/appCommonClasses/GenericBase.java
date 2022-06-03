@@ -39,7 +39,7 @@ public class GenericBase extends PageInitialiser{  //
 		}
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void initialize() throws Exception {
 		System.out.println("initialise");
 		GlobalParams params = new GlobalParams();
@@ -55,7 +55,7 @@ public class GenericBase extends PageInitialiser{  //
 		
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public  void quit() throws Exception{
 		System.out.println("QUIT");
 		DriverManager driverManager = new DriverManager();

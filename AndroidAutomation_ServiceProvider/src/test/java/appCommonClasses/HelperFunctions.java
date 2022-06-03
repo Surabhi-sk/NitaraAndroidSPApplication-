@@ -278,4 +278,37 @@ public class HelperFunctions extends GenericBase{
 		
 		return(cooptagNumber);
 }
+	public String RegisterMilkingorDryCattle() throws Exception {
+		
+		//function returns tag number
+
+		String calving_date = generateData.getPastDate(0);
+		String tagNumber =generateData.generateRandomNumber(7);		
+		
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		/** Search for farm **/
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.waitForPageLoad();
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.waitForPageLoad();
+		searchFarmPage.select_farm(phone);
+		searchFarmPage.waitForPageLoad();
+		
+		/** Select Cattle Type page - Select Milking and Dry Cattle */
+		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
+		registerMilkingCattlePage.assert_CattleType();
+		
+		/** Milking and Dry Cattle page - Enter Tag number and save  */
+		registerMilkingCattlePage.enter_TagNumber(tagNumber);	
+		registerMilkingCattlePage.enter_Calvingdate(calving_date);
+		registerMilkingCattlePage.press_SaveButton();
+		
+		/** Go back to home page */
+		registerCattleSuccessPage.goBackToHomePage();
+		
+		return(tagNumber);
+}
 }
