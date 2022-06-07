@@ -55,16 +55,16 @@ public class BasePage {
 // 		wait.until(ExpectedConditions.invisibilityOf(locator));
 // 	}
 	
-// 	public void waitForPageLoad(){
-// 		try {
-// 			Thread.sleep(5000);
-// 		} catch (InterruptedException e) {
-// 			// TODO Auto-generated catch block
-// 			e.printStackTrace();
-// 		}
-// 	}
+ 	public void waitForPageLoad(){
+ 		try {
+ 			Thread.sleep(5000);
+ 		} catch (InterruptedException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 	}
 	
-	public void waitForPageLoad(){	
+	public void waitForPageLoadBar(){	
 		try {
 			List<WebElement> progress_bar=  (List<WebElement>) driver.findElements(By.id("request_in_progress_bar"));
 			if(progress_bar.size()>0) {
