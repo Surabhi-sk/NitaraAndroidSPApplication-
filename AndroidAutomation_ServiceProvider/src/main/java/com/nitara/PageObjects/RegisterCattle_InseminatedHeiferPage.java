@@ -77,12 +77,12 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\".*is_Incerminated.*\"))") 
-	private MobileElement is_Incerminated;
+			+ "new UiSelector().resourceIdMatches(\".*is_inseminated.*\"))") 
+	private MobileElement is_Inseminated;
 	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
-			+ "new UiSelector().resourceIdMatches(\".*insemination_date_lbl.*\"))") 
-	private MobileElement insemination_date_lbl;
+			+ "new UiSelector().resourceIdMatches(\".*inseminationDate.*\"))") 
+	private MobileElement insemination_date;
 	
 
 	
@@ -151,9 +151,9 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void isCattleInseminated() {
-		String checked = is_Incerminated.getAttribute("checked");
+		String checked = is_Inseminated.getAttribute("checked");
 		if(checked.equals("false")) {
-			is_Incerminated.click();	
+			is_Inseminated.click();	
 		}
 	}
 	
@@ -181,7 +181,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	}
 	
 	public void enter_InseminationDate(String Date) {
-		sendKeys(inserminationDate,Date);
+		sendKeys(insemination_date,Date);
 	}
 	
 	public void select_semenBrand(String semen) {
