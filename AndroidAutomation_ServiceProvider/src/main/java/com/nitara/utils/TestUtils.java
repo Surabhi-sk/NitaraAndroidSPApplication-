@@ -7,7 +7,7 @@ public class TestUtils {
 
 	public static final long WAIT = 60;
 	
-	public static final long OTP_WAIT = 60;
+	public static final long OTP_WAIT = 30;
 
 	public Logger log() {
 		return LogManager.getLogger(Thread.currentThread().getStackTrace()[2].getClassName());
