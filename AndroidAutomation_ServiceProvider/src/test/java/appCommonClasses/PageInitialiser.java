@@ -39,6 +39,7 @@ import com.nitara.PageObjects.RegisterFarm_EnterDetailsPage;
 import com.nitara.PageObjects.RegisterFarm_EnterPhonePage;
 import com.nitara.PageObjects.SP_BasicCattleProfilePage;
 import com.nitara.PageObjects.SP_HomePage;
+import com.nitara.PageObjects.Settings;
 import com.nitara.PageObjects.SubmitData_EnterOTPPage;
 import com.nitara.PageObjects.SubmitData_GenerateOTPPage;
 import com.nitara.PageObjects.SubmitData_SuccessPage;
@@ -95,6 +96,7 @@ public class PageInitialiser {
 	protected static Weight_AddWeightPage addWeightPage;
 	protected static Weight_RecordSuccessPage weightSuccessPage;
 	protected static ChooseLanguagePage chooseLanguagePage;
+	protected static Settings settingsPage;
 	
 	public static void initializeAllPages() {
 		
@@ -145,6 +147,7 @@ public class PageInitialiser {
 		addWeightPage = new Weight_AddWeightPage();
 		weightSuccessPage = new Weight_RecordSuccessPage();
 		chooseLanguagePage = new ChooseLanguagePage();
+		settingsPage = new Settings();
 		
 	}
 
