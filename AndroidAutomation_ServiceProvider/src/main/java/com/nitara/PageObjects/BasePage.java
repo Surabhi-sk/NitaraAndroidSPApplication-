@@ -75,7 +75,6 @@ public class BasePage {
 		} catch (NoSuchElementException e){
 
 		}
-		
 	}
 
 	public void waitForResendOTPBtn() {
