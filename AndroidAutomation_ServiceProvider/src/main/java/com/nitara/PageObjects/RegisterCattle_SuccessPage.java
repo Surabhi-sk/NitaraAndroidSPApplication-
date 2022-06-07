@@ -41,6 +41,11 @@ public class RegisterCattle_SuccessPage extends BasePage{
 		waitVisibility(submit_btn);
 		click(submit_btn);
 	}
+
+	public void pressRecordAnotherCattleBtn() {
+		waitVisibility(record_another_cattle);
+		click(record_another_cattle);
+	}
 	
 	public void assertSubmissionStatus(String status) {
 		Assert.assertEquals(submissionStatus.getText(),status);
