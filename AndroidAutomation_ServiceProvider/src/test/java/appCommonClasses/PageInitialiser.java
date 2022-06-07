@@ -35,6 +35,7 @@ import com.nitara.PageObjects.RegisterCattle_InseminatedHeiferPage;
 import com.nitara.PageObjects.RegisterCattle_MilkingCattlePage;
 import com.nitara.PageObjects.RegisterCattle_SearchFarmPage;
 import com.nitara.PageObjects.RegisterCattle_SuccessPage;
+
 import com.nitara.PageObjects.RegisterFarm_EnterDetailsPage;
 import com.nitara.PageObjects.RegisterFarm_EnterPhonePage;
 import com.nitara.PageObjects.SP_BasicCattleProfilePage;
@@ -97,6 +98,7 @@ public class PageInitialiser {
 	protected static Weight_RecordSuccessPage weightSuccessPage;
 	protected static ChooseLanguagePage chooseLanguagePage;
 	protected static Settings settingsPage;
+	protected static WarningPage WarningPage;
 	
 	public static void initializeAllPages() {
 		
@@ -113,6 +115,7 @@ public class PageInitialiser {
 		viewTreatmentPage = new Health_ViewTreatmentPage();
 		registerCattleBullPage = new RegisterCattle_BullPage();
 		registerCattleSuccessPage = new RegisterCattle_SuccessPage();
+		WarningPage = new WarningPage();
 		registerCattleCalfPage = new RegisterCattle_CalfPage();
 		registerCattleInseminatedHeiferPage = new RegisterCattle_InseminatedHeiferPage();
 		registerMilkingCattlePage = new RegisterCattle_MilkingCattlePage();
