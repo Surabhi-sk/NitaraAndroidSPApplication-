@@ -19,7 +19,7 @@ public class RegisterHeifer extends GenericBase{
 
 		String tagNumber = generateData.generateRandomNumber(7);
 		String cooptagNumber = generateData.generateRandomNumber(12);
-		
+		searchFarmPage.waitForPageLoad();
 		SPHomePage.pressRegisterCattleButton();
 		
 		//Search for farm
@@ -28,7 +28,7 @@ public class RegisterHeifer extends GenericBase{
 		searchFarmPage.pressSearchButton();
 		searchFarmPage.select_farm(phone);
 		
-		
+		searchFarmPage.waitForPageLoad();
 		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
 
 
@@ -75,4 +75,569 @@ public class RegisterHeifer extends GenericBase{
 		helperFunctions.submitData();
 
 	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferTag(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = data.get("tagNumber");
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferCheckSameTag(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = data.get("tagNumber");
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferCoop(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = data.get("coop");
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferPALess(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = data.get("coop");
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferPAGreat(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = data.get("coop");
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferTagCheck(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = "";
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferBirthYear(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB("");
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferInseminationDate(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		registerCattleInseminatedHeiferPage.isCattleInseminated();
+		registerCattleInseminatedHeiferPage.enter_InseminationDate(data.get("inseminationDate"));
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferInseminationDateCheck(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		registerCattleInseminatedHeiferPage.isCattleInseminated();
+		registerCattleInseminatedHeiferPage.enter_InseminationDate(data.get("inseminationDate"));
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferHeatEntry(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+		else if(data.get("isCattleInseminated").equalsIgnoreCase("true")) {
+			if(data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattleInseminated();
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),data.get("semenBrand") ,data.get("bullId"));}
+
+			else{
+				registerCattleInseminatedHeiferPage.isCattleInseminated();
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),data.get("bullId"));
+			}
+		}
+		
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+		registerCattleSuccessPage.goBackToHomePage();
+		helper.goTo_BreedingTimeline(cooptagNumber);
+	}
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_HeiferBreeding(Map<String, String> data) throws Exception {
+
+		new Login().Login_ValidData();
+
+		String tagNumber = generateData.generateRandomNumber(7);
+		String cooptagNumber = generateData.generateRandomNumber(12);
+		searchFarmPage.waitForPageLoad();
+		SPHomePage.pressRegisterCattleButton();
+		
+		//Search for farm
+		String phone = prop.getProperty("FarmerPhone");
+		searchFarmPage.enterPhoneNumber(phone);
+		searchFarmPage.pressSearchButton();
+		searchFarmPage.select_farm(phone);
+		
+		searchFarmPage.waitForPageLoad();
+		cattleTypePage.select_cattleType("INSEMINATED HEIFER");
+		
+		registerCattleInseminatedHeiferPage.assert_CattleType();
+		registerCattleInseminatedHeiferPage.enter_TagNumber(tagNumber);
+		registerCattleInseminatedHeiferPage.enter_CoopTagNumber(cooptagNumber);
+		registerCattleInseminatedHeiferPage.select_YOB(data.get("yearOfBirth"));
+		registerCattleInseminatedHeiferPage.select_month(data.get("monthOfBirth"));
+		registerCattleCalfPage.select_cattleType(data.get("cattleType"));
+		
+		if (data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			registerCattleInseminatedHeiferPage.select_crossbreedToggle(data.get("isCrossBreed"),
+					data.get("crossedWith"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if (data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if (data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.artificialInsemination(data.get("inseminationDate"),
+						data.get("semenBrand"), data.get("bullId"));
+			} else {
+				registerCattleInseminatedHeiferPage.isCattlePregnant(data.get("pregnantSince"));
+				registerCattleInseminatedHeiferPage.naturalInsemination(data.get("inseminationDate"),
+						data.get("bullId"));
+			}
+		}
+
+		registerCattleInseminatedHeiferPage.press_SaveButton();
+
+		/** Assert success Page */
+		registerCattleSuccessPage.captureScreenshots("RegisterHeifer");
+		registerCattleSuccessPage.assertCattleTag(tagNumber);
+		registerCattleSuccessPage.assertSuccessMsg("Registration has been saved successfully for");
+
+	}
+	
 }
