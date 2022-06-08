@@ -43,6 +43,25 @@ public class EnterOTPpage extends BasePage{
 			sendKeys(i,digit);	
 		}
 	}
+
+	public void click_ContinueBtn() {
+		click(continue_btn);
+
+	}
+
+	public void click_ResendSMSBtn() {
+		click(resent_sms_btn);
+		System.out.println("Clicked Resend SMS");
+	}
+
+	public void click_SendOTPViaCallBtn() {
+		click(send_otp_call_btn);
+		System.out.println("Clicked OTP via call");
+	}
+
+	public void assert_enterOTPpage() {
+		waitForVisibility(verificationCode_txt);
+	}
 	
 	public void click_ContinueBtn() {
 		click(continue_btn);

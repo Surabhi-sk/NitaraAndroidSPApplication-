@@ -49,22 +49,21 @@ public class BasePage {
 		}
 
 	}
-	
 // 	public void waitForPageLoad(MobileElement locator) throws Exception {
 // 		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
 // 		wait.until(ExpectedConditions.invisibilityOf(locator));
 // 	}
 	
-// 	public void waitForPageLoad(){
-// 		try {
-// 			Thread.sleep(5000);
-// 		} catch (InterruptedException e) {
-// 			// TODO Auto-generated catch block
-// 			e.printStackTrace();
-// 		}
-// 	}
+ 	public void waitForPageLoad(){
+ 		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		e.printStackTrace();
+ 		}
+ 	}
 	
-	public void waitForPageLoad(){	
+	public void waitForPageLoadBar(){
 		try {
 			List<WebElement> progress_bar=  (List<WebElement>) driver.findElements(By.id("request_in_progress_bar"));
 			if(progress_bar.size()>0) {
@@ -78,7 +77,18 @@ public class BasePage {
 		}
 		
 	}
-	
+
+	public void waitForResendOTPBtn() {
+		WebElement resendOTP = driver.findElement(By.id("resent_sms_btn"));
+		if(resendOTP.isEnabled()!=true) {
+			System.out.println("OTP Disabled for now");
+		}
+		WebElement timerTxt = driver.findElement(By.id("timer_txt"));
+		WebDriverWait wait = new WebDriverWait(driver, TestUtils.OTP_WAIT);
+		wait.until(ExpectedConditions.textToBePresentInElement(timerTxt,"00:00"));
+	}
+
+
 	public void enterDate(String date) {
 		// TODO Auto-generated method stub
 		System.out.println(date);
