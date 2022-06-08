@@ -1,5 +1,7 @@
 package com.nitara.PageObjects;
 
+import org.testng.Assert;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
