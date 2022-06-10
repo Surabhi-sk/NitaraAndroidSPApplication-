@@ -12,7 +12,7 @@ import appCommonClasses.GenericBase;
 
 public class RegisterMilkingorDryCattle extends GenericBase{
 	
-	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	@Test(groups="Regression1",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
 	public void RegisterMilkingorDryCattle_TagnumberAcceptsSpecialChars(Map<String,String> data) throws Exception{		
 		
 		/** Login **/
