@@ -21,6 +21,9 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	@AndroidFindBy(id = "cooperative_tag_number_et") 
 	private MobileElement CoopTagNumber;
 	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*year_of_birth_spinner.*\"))") 
 	private MobileElement year_of_birth;
@@ -159,7 +162,7 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	public void artificialInsemination(String date,String semen,String BullId) throws InterruptedException {
 		enter_InseminationDate(date);
-		select_semenBrand(semen);
+		//select_semenBrand(semen);
 		enter_BullId(BullId);
 		hideKeyboard();
 	}
@@ -196,6 +199,10 @@ public class RegisterCattle_InseminatedHeiferPage extends BasePage{
 	
 	public void press_SaveButton() {
 		click(save_btn);	
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 
 }
