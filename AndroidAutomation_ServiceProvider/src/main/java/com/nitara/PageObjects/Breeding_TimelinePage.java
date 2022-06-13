@@ -67,6 +67,13 @@ public class Breeding_TimelinePage extends BasePage{
 	@AndroidFindBy(id = "btnRemoveRight")
 	private MobileElement deleteBtnRight ;
 	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+	        ".scrollIntoView(new UiSelector().text(\"HEAT\"))") 
+	private MobileElement heat_entry ;
+	
+	public void assert_HeatEntry() throws Exception{
+		Assert.assertEquals(heat_entry.getText(), "HEAT");
+	}	
 	
 	public void click_AddActivity() {
 		waitForPageLoad();

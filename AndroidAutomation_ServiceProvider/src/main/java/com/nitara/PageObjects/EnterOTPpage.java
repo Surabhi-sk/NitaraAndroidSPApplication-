@@ -44,11 +44,6 @@ public class EnterOTPpage extends BasePage{
 		}
 	}
 
-	public void click_ContinueBtn() {
-		click(continue_btn);
-
-	}
-
 	public void click_ResendSMSBtn() {
 		click(resent_sms_btn);
 		System.out.println("Clicked Resend SMS");

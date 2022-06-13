@@ -46,6 +46,7 @@ import com.nitara.PageObjects.SubmitData_GenerateOTPPage;
 import com.nitara.PageObjects.SubmitData_SuccessPage;
 import com.nitara.PageObjects.Weight_AddWeightPage;
 import com.nitara.PageObjects.Weight_RecordSuccessPage;
+import com.nitara.PageObjects.*;
 
 
 public class PageInitialiser {
