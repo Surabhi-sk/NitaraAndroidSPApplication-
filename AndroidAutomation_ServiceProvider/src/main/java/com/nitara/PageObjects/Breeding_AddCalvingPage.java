@@ -1,5 +1,7 @@
 package com.nitara.PageObjects;
 
+import org.testng.Assert;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -13,6 +15,12 @@ public class Breeding_AddCalvingPage extends BasePage{
 	
 	@AndroidFindBy(id = "maleRdBtn_single") 
 	private MobileElement Male_RdBtn;
+	
+	@AndroidFindBy(id = "alertTitle") 
+	private MobileElement alert;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 	
 	@AndroidFindBy(id = "femaleRdBtn_single") 
 	private MobileElement Female_RdBtn;
@@ -93,5 +101,13 @@ public class Breeding_AddCalvingPage extends BasePage{
 	
 	public void press_proceed() {
 		click(proceed);	
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
+	}
+	public void assertAlert(String message) {
+		waitVisibility(alert);
+		Assert.assertEquals(alert.getText(),message);		
 	}
 }
