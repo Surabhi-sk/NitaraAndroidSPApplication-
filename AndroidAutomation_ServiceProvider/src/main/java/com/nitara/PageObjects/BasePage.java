@@ -61,16 +61,24 @@ public class BasePage {
 // 		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
 // 		wait.until(ExpectedConditions.invisibilityOf(locator));
 // 	}
-	
- 	public void waitForPageLoad(){
- 		try {
+
+	public void enterDate(String date) {
+		// TODO Auto-generated method stub
+		System.out.println(date);
+		driver.findElementByAccessibilityId(date).click();
+		
+	}
+
+
+	public void waitForPageLoad(){
+		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-		e.printStackTrace();
- 		}
- 	}
-	
+			e.printStackTrace();
+		}
+	}
+
 	public void waitForPageLoadBar(){
 		try {
 			List<WebElement> progress_bar=  (List<WebElement>) driver.findElements(By.id("request_in_progress_bar"));
@@ -79,11 +87,10 @@ public class BasePage {
 				wait.until(ExpectedConditions.invisibilityOf(progress_bar.get(0)));
 				System.out.println("Page has loaded");
 			}
-						
+
 		} catch (NoSuchElementException e){
 
 		}
-		
 	}
 	
 	public void assertWarningMsg(String msg) {
@@ -101,13 +108,6 @@ public class BasePage {
 		wait.until(ExpectedConditions.textToBePresentInElement(timerTxt,"00:00"));
 	}
 
-
-	public void enterDate(String date) {
-		// TODO Auto-generated method stub
-		System.out.println(date);
-		driver.findElementByAccessibilityId(date).click();
-		
-	}
 
 	public void waitForVisibility(MobileElement e) {
 		WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
