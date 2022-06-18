@@ -1,11 +1,17 @@
 package com.nitara.PageObjects;
 
+import java.util.List;
+
 import org.json.JSONObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
+import com.nitara.Helper.GenerateData;
 import com.nitara.PageObjects.BasePage;
 
 import io.appium.java_client.MobileElement;
@@ -43,8 +49,49 @@ public class SP_HomePage extends BasePage{
 	@AndroidFindBy(id ="settings")
 	private MobileElement settings;
 
+	@AndroidFindBy(id ="search_by_phone_num")
+	private MobileElement search_by_phone_num;
+	
+	@AndroidFindBy(id ="search_cattle_farm_sp_phone")
+	private MobileElement search_cattle_farm_sp_phone;
+	
+	@AndroidFindBy(id ="earTagNumber")
+	private MobileElement earTagNumber;
+	
+	@AndroidFindBy(id ="tvCattleTag")
+	private MobileElement tvCattleTag;
+	
+	public void searchFarm(String farmerNumber) {
+		click(search_by_phone_num);
+		sendKeys(search_cattle,farmerNumber);
+		waitVisibility(search_btn);
+		click(search_btn);
 
-
+	}
+	
+	public void searchCattleinFarm(String tag) {
+		sendKeys(search_cattle_farm_sp_phone,tag);
+		click(search_btn);
+		Assert.assertEquals(earTagNumber.getText(), tag);
+		click(earTagNumber);
+		waitForPageLoad();
+		Assert.assertEquals(tvCattleTag.getText(), tag);		
+	}
+	
+	public void assertSearchButtonInvisibility() {
+		click(search_by_phone_num);
+		GenerateData generateData = new GenerateData();
+		String phoneNumber = generateData.generateRandomNumber(9);
+		sendKeys(search_cattle,phoneNumber);
+		List<WebElement> searchButton=  (List<WebElement>) driver.findElements(By.id("search_btn"));
+		Assert.assertTrue(searchButton.size()==0);
+	}
+	
+	public void assertCattle(String tag)
+	{	
+		Assert.assertEquals(tvCattleTag.getText(), tag);
+	}
+	
 	public void pressRegisterFarmButton()
 	{	waitVisibility(register_farm_btn);
 
@@ -58,7 +105,6 @@ public class SP_HomePage extends BasePage{
 
 
 	public void searchCattle(String coopTag) {
-		// TODO Auto-generated method stub
 		sendKeys(search_cattle,coopTag);
 		waitVisibility(search_btn);
 		click(search_btn);

@@ -71,6 +71,7 @@ public class RegisterMilkingCattle extends PropertyManager{
 	String  message = JsonPath.from(jsonString).get("message");
 	Assert.assertEquals(message, "Cattle Registered successfully." );
 	
-	return CoopNo;
+	//To use the numbers use .split(" ") this will give an array of Strings. At index 0 CoopNo and index 1 TagNo.
+	return CoopNo+" "+TagNo;
 	}
 }

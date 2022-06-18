@@ -14,7 +14,7 @@ public class Login extends GenericBase{
 		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
 		
 		/** Enter Phone Number **/
-		enterPhoneNoPage.enter_PhoneNo("8888888882");
+		enterPhoneNoPage.enter_PhoneNo("8820288909");
 		enterPhoneNoPage.click_continue();
 		
 		/** Enter PIN */

@@ -12,23 +12,23 @@ import appCommonClasses.GenericBase;
 
 public class RegisterMilkingorDryCattle extends GenericBase{
 	
-	@Test(groups="Regression1",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	@Test(groups="Regression",dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
 	public void RegisterMilkingorDryCattle_TagnumberAcceptsSpecialChars(Map<String,String> data) throws Exception{		
 		
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -53,17 +53,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		String Tag = helperFunctions.RegisterMilkingorDryCattle();
 		
 		/** Start Registering next cattle */
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -83,17 +83,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -115,17 +115,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -147,17 +147,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -178,17 +178,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -209,17 +209,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -241,17 +241,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -274,17 +274,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -309,17 +309,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -345,17 +345,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");
@@ -382,17 +382,17 @@ public class RegisterMilkingorDryCattle extends GenericBase{
 		/** Login **/
 		new Login().Login_ValidData();
 		
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		SPHomePage.pressRegisterCattleButton();
 		
 		/** Search for farm **/
 		String phone = prop.getProperty("FarmerPhone");
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.enterPhoneNumber(phone);
 		searchFarmPage.pressSearchButton();
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		searchFarmPage.select_farm(phone);
-		searchFarmPage.waitForPageLoad();
+		searchFarmPage.waitForPageLoadBar();
 		
 		/** Select Cattle Type page - Select Milking and Dry Cattle */
 		cattleTypePage.select_cattleType("MILKING AND DRY CATTLE");

@@ -52,7 +52,7 @@ public class LoginAPI{
 		Properties prop = new PropertyManager().getProps();
 	
 		// Read SP credentials from Excel
-		String username = prop.getProperty("Username");
+		String username = prop.getProperty("FarmerPhone");
 		String password = prop.getProperty("Password");
 		System.out.println(username);
 	

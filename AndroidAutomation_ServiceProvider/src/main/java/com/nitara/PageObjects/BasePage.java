@@ -2,6 +2,7 @@ package com.nitara.PageObjects;
 
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 import java.io.File;
@@ -26,6 +27,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import com.nitara.utils.DriverManager;
 import com.nitara.utils.TestUtils;
 
@@ -33,6 +36,9 @@ public class BasePage {
 
 	public AndroidDriver<?> driver;
 	TestUtils utils = new TestUtils();
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 
 	public BasePage() {
 		this.driver = (AndroidDriver<MobileElement>) new DriverManager().getDriver();
@@ -79,6 +85,11 @@ public class BasePage {
 		}
 		
 	}
+	
+	public void assertWarningMsg(String msg) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),msg);
+	} 
 
 	public void waitForResendOTPBtn() {
 		WebElement resendOTP = driver.findElement(By.id("resent_sms_btn"));

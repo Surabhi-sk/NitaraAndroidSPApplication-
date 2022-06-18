@@ -10,6 +10,7 @@
     <classes>
       <class name="com.nitara.CattleManagement.RegisterMilkingorDryCattle"/>
       <class name="com.nitara.AccountManagement.ForgotPin"/>
+      <class name="com.nitara.CattleManagement.SearchCattle"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Regression Suite -->
