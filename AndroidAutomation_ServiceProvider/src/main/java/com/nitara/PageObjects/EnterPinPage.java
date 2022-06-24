@@ -1,5 +1,7 @@
 package com.nitara.PageObjects;
 
+import org.testng.Assert;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -10,6 +12,9 @@ public class EnterPinPage extends BasePage{
 	
 	@AndroidFindBy(id = "loginBtn") 
 	private MobileElement loginBtn;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 	
 	@AndroidFindBy(id = "loginWithOtpTv") 
 	private MobileElement loginWithOtpBtn;
@@ -34,6 +39,9 @@ public class EnterPinPage extends BasePage{
 	public void click_loginWithOtpBtn() {
 		click(loginWithOtpBtn);
 	}
-	
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
+	}
 
 }
