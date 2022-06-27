@@ -4,6 +4,8 @@ package com.nitara.PageObjects;
 import java.util.List;
 import java.util.Map;
 
+import org.testng.Assert;
+
 import com.nitara.Helper.GenerateData;
 
 import io.appium.java_client.MobileElement;
@@ -13,6 +15,9 @@ public class Health_AddTreatmentPage extends BasePage{
 
 	@AndroidFindBy(id = "location") 
 	private MobileElement phone_number;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 
 	@AndroidFindBy(id = "enterSymptomsTv") 
 	private MobileElement enterSymptoms;
@@ -152,6 +157,10 @@ public class Health_AddTreatmentPage extends BasePage{
 		enter_date(new GenerateData().getPastDate(15));
 		click_save();
 		new Health_SuccessPage().pressSubmitButton();
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
 	}
 
 
