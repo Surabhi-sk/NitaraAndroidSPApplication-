@@ -1,5 +1,6 @@
 package appCommonClasses;
 
+import com.nitara.APIFunctions.RegisterMilkingCattle;
 import com.nitara.Helper.GenerateData;
 import com.nitara.PageObjects.Breeding_ActivityListPage;
 import com.nitara.PageObjects.Breeding_AddCalvingPage;
@@ -100,6 +101,7 @@ public class PageInitialiser {
 	protected static ChooseLanguagePage chooseLanguagePage;
 	protected static Settings settingsPage;
 	protected static WarningPage WarningPage;
+	protected static RegisterMilkingCattle registerCattleApi;
 	
 	public static void initializeAllPages() {
 		
@@ -152,7 +154,7 @@ public class PageInitialiser {
 		weightSuccessPage = new Weight_RecordSuccessPage();
 		chooseLanguagePage = new ChooseLanguagePage();
 		settingsPage = new Settings();
-		
+		registerCattleApi = new RegisterMilkingCattle();
 	}
 
 }

@@ -20,7 +20,7 @@ public class GetFarmId extends PropertyManager{
 		
 		RequestSpecification request = RestAssured.given();
 		
-		String username = prop.getProperty("Username");
+		String username = prop.getProperty("FarmerPhone");
 
 		//Create 
 		JSONObject requestParams = new JSONObject();
