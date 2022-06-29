@@ -21,7 +21,6 @@ public class Helper extends PageInitialiser{
 		basicCattleProfilePage.select_breeding();
 		basicCattleProfilePage.waitForPageLoad();
 		breedingActivityListPage.select_Activity(activity);
-		breedingActivityListPage.waitForPageLoad();
 		
 		
 	}

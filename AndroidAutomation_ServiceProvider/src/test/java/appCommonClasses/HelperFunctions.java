@@ -154,7 +154,7 @@ public class HelperFunctions extends GenericBase{
 		//submitDataSuccessPage.assert_successMsg();
 //		submitDataSuccessPage.assert_totalRequest("1");
 //		submitDataSuccessPage.assert_requestSubmitted("1");
-		enterOTPPage.waitForPageLoad();
+		enterOTPPage.waitForPageLoadBar();
 		submitDataSuccessPage.goto_Homepage();
 		
 		

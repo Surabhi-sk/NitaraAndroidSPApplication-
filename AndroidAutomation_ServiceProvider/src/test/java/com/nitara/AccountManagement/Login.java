@@ -16,11 +16,13 @@ public class Login extends GenericBase{
 		
 		/** Select Language */
 		chooseLanguagePage.select_Language("ENGLISH");
+		chooseLanguagePage.waitForPageLoadBar();
 		chooseLanguagePage.click_skipBtn(); // Skip Tutorial
 		
 		/** Enter Phone Number **/
 		enterPhoneNoPage.enter_PhoneNo("8820288909");
 		enterPhoneNoPage.click_continue();
+		enterPhoneNoPage.waitForPageLoadBar();
 		
 		/** Enter PIN */
 		enterPinPage.enter_pin("123456");

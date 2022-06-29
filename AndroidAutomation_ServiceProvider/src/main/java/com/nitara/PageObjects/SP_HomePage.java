@@ -147,6 +147,11 @@ public class SP_HomePage extends BasePage{
 		click(settings);	
 	}
 	
+	public void click_HomeButton()
+	{	waitForVisibility(home_btn);
+		click(home_btn);	
+	}
+	
 	
 	
 	

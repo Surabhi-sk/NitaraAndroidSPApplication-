@@ -16,6 +16,9 @@ public class Breeding_SuccessPage extends BasePage{
 	@AndroidFindBy(id = "home") 
 	private MobileElement home;
 	
+	@AndroidFindBy(id = "record_another_cattle") 
+	private MobileElement record_another;
+	
 	public void pressSubmitButton() {
 		waitVisibility(submit_btn);
 		click(submit_btn);
@@ -29,5 +32,8 @@ public class Breeding_SuccessPage extends BasePage{
 		click(home);
 	}
 	
+	public void recordAnotherActivity() throws Exception {
+		record_another.click();
+	}
 
 }
