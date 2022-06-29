@@ -13,6 +13,9 @@ public class Breeding_AddHeatPage extends BasePage{
 	@AndroidFindBy(id = "artificialBtn") 
 	private MobileElement artificial_btn;
 	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
+	
 	@AndroidFindBy(id = "heat_date") 
 	private MobileElement heat_date;
 	
@@ -83,7 +86,10 @@ public class Breeding_AddHeatPage extends BasePage{
 	public void press_SaveButton() {
 		click(save_btn);	
 	}
-	
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
+	}
 
 }
 
