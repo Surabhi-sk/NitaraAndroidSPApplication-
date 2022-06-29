@@ -4,14 +4,22 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class Health_AddVaccinationPage  extends BasePage{
 
-	@AndroidFindBy(id = "amountValue") 
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().resourceIdMatches(\".*amountValue.*\"))") 
 	private MobileElement amount;
+	
+	@AndroidFindBy(id = "alertTitle") 
+	private MobileElement alert;
+	
+	@AndroidFindBy(id = "snackbar_text")
+	private MobileElement warning_msg;
 
 	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
 			+ "new UiSelector().resourceIdMatches(\".*saveBtn.*\"))") 
@@ -52,7 +60,7 @@ public class Health_AddVaccinationPage  extends BasePage{
 	public void select_vaccination(String vaccine) {
 		String xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/";
 
-		for(int i=1;i<6;i++) {
+		for(int i=1;i<10;i++) {
 			WebElement vaccines = driver.findElement(By.xpath(xpath+"android.widget.FrameLayout["+i+"]/android.widget.TextView"));
 			System.out.println(vaccines.getText());
 			if(vaccines.getText().equalsIgnoreCase(vaccine)) {
@@ -77,6 +85,14 @@ public class Health_AddVaccinationPage  extends BasePage{
 	public void click_Save() {
 		waitForVisibility(save_button);
 		click(save_button);
+	}
+	public void assertWarning(String message) {
+		waitVisibility(warning_msg);
+		Assert.assertEquals(warning_msg.getText(),message);		
+	}
+	public void assertAlert(String message) {
+		waitVisibility(alert);
+		Assert.assertEquals(alert.getText(),message);		
 	}
 
 }
